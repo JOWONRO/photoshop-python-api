@@ -41,3 +41,7 @@ class TextFonts(Photoshop):
             if font.name == name:
                 return TextFont(font)
         raise PhotoshopPythonAPIError('Could not find a TextFont named "{name}"')
+
+    def getFontList(self):
+        """Get all fonts."""
+        return [TextFont(font) for font in self.app]
